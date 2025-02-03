@@ -2,8 +2,7 @@
 ### Example user template
 
 
-WEB2
-WEB2/jes.env
+
 
 # IntelliJ project files
 .idea
@@ -12,5 +11,5 @@ out
 gen
 
 
-
-.WEB2/jes.env
+#
+#.WEB2/jes.env!/WEB2/jes.env

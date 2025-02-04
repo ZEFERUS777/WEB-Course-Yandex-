@@ -1,15 +1,22 @@
-### Example user template template
 ### Example user template
+### Environment files
+WEB2/jes.env
+*.env
 
-
-
-
-# IntelliJ project files
-.idea
+### IntelliJ project files
+.idea/
 *.iml
-out
-gen
+out/
+gen/
 
+### Web directories
+/WEB2/
 
+### System files
+.DS_Store
+Thumbs.db
 
-.WEB2/jes.env!/WEB2/jes.env
+### Python
+__pycache__/
+*.py[cod]
+*$py.class

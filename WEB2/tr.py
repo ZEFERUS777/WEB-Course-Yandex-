@@ -11,7 +11,7 @@ ENV_FILE = 'jes.env'
 MAP_IMAGE_FILE = 'map.png'
 API_GEOSEARCH_URL = 'http://geocode-maps.yandex.ru/1.x/'
 API_STATIC_MAPS_URL = 'https://static-maps.yandex.ru/v1'
-LOCATION_NAME = 'улица Салмана Озиева, 4, Магас, Республика Ингушетия, 386001'
+LOCATION_NAME = 'ул. Петровка, 38, стр. 1, Москва'
 
 def load_environment_variables():
     """Загрузить переменные окружения из файла"""

@@ -9,14 +9,11 @@ from dotenv import load_dotenv
 
 from cords_in import grad
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
 load_dotenv('api.env')
 
 # Получаем параметры из переменных окружения
-GEOCODER_API_KEY = 'ENTER KEY'
-STATIC_MAPS_API_KEY = 'ENTER KEY'
-
+GEOCODER_API_KEY = os.getenv('GEOCODER_KEY')
+STATIC_MAPS_API_KEY = os.getenv('STATIC_API')
 # Формируем запрос к геокодеру
 toponym_to_find = " ".join(sys.argv[1:])
 

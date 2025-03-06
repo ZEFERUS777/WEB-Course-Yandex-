@@ -3,8 +3,6 @@ import os
 import requests
 from dotenv import load_dotenv
 
-load_dotenv("api.env")
-GEOCODER_API_KEY = os.getenv('GEOCODER_KEY')
 
 
 def grad(loc: str):
@@ -29,7 +27,7 @@ def grad(loc: str):
     return delta_lon_deg, delta_lat_deg
 
 
-def cords(loc: str):
+def cords(loc: str, GEOCODER_API_KEY: str):
     geocoder_api_server = "http://geocode-maps.yandex.ru/1.x/"
     response = requests.get(geocoder_api_server, params={
         'apikey': GEOCODER_API_KEY,
@@ -41,6 +39,8 @@ def cords(loc: str):
 
     toponym = json_response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
 
-    pos = toponym['Point']['pos']
-    print(GEOCODER_API_KEY)
-    return pos
+    x, y = toponym['Point']['pos'].split()
+
+    return x,y
+
+

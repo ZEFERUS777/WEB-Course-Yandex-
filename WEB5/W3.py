@@ -1,6 +1,6 @@
-import sys
-import schedule
 import datetime
+
+import schedule
 
 start_h, end_h = map(int, input().split('-', maxsplit=1))
 

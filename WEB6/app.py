@@ -6,6 +6,9 @@ from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton, QLabel, QLineEdit
 from dotenv import load_dotenv
 
+
+from WEB4.cords_in import grad
+
 load_dotenv('keys.env')
 WIDTH, HEIGHT = (800, 600)
 GEOCODER_API = os.getenv('GEOCODER_KEY')
@@ -54,7 +57,9 @@ class Map_Window(QMainWindow):
             print("Invalid coordinates. Please enter numeric values.")
             return
 
-        req = f"{URL_STATIC}?apikey={STATIC_API}&ll={lon_float},{lat_float}&z=10&l=map"
+        spf = grad((lat_float, lon_float), GEOCODER_API)
+
+        req = f"{URL_STATIC}?apikey={STATIC_API}&ll={lon_float},{lat_float}&z=10&l=map&spn={spf[0]},{spf[1]}&z=21&theme=dark"
         response = requests.get(req)
 
         if response.status_code == 200:
